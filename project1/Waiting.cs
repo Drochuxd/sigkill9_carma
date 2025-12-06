@@ -18,8 +18,6 @@ namespace project1
             locationLabel.Text = RequestCar.Location;
             destinationLabel.Text = RequestCar.Destanation;
             distanceLabel.Text = 2 + " miles";
-            
-
         }
 
         private void Waiting_Load(object sender, EventArgs e)

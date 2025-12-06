@@ -10,14 +10,15 @@ namespace project1
     public class Security_System
     {
         public List<Camera> cameras;
-        public Security_System() 
+
+        public Security_System(List<Camera> cameras) 
         {
-            cameras = new List<Camera>();
+            this.cameras = cameras;
         }
 
         public void detect_motion(int camera_id)
         {
-            foreach (Camera cam in cameras)
+            foreach (Camera cam in this.cameras)
             {
                 if (cam.Detect_Motion)
                 {
@@ -33,17 +34,17 @@ namespace project1
     public class Camera
     {
         public int Camera_ID;
-        public Boolean Detect_Motion;
+        public bool Detect_Motion;
 
         public Camera(int id)
         {
-            Camera_ID = id;
-            Detect_Motion = false;
+            this.Camera_ID = id;
+            this.Detect_Motion = false;
         }
 
         public void motion_toggle()
         {
-            Detect_Motion = !Detect_Motion;
+            this.Detect_Motion = !this.Detect_Motion;
         }
     }
 }

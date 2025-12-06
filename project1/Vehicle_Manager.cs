@@ -26,7 +26,7 @@ namespace project1
 			this.vehicle_list.RemoveAt(index);
 		}
 
-		public void set_pwd(string pwd)
+		public void set_pwd(string pwd, int index)
 		{
 			this.vehicle_list[index].Router_Menu(false, pwd);
 		}

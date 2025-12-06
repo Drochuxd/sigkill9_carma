@@ -13,8 +13,7 @@ namespace project1
 {
     public partial class Opts : Form
     {
-        public Vehicle_Manger manager = new Vehicle_Manger();
-        
+        public Vehicle_Manager manager;
         public static bool VoiceAssist = false;
         public static bool heatedSeats = false;
         public static bool DoorLight = false;
@@ -22,11 +21,10 @@ namespace project1
         public static bool YourLocation = false;
         public static bool checkBox = false;
 
-        public Opts(Car car)
+        public Opts(Vehicle_Manager mgr)
         {
-
             InitializeComponent();
-            currentCar = car;
+            manager = mgr;
         }
 
         private void chkVoiceAssistance_CheckedChanged(object sender, EventArgs e)

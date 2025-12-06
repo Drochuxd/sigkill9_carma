@@ -17,6 +17,7 @@ namespace project1
         public static string FName = "";
         public static string LName = "";
         public static string EmailAddress = "";
+        public Vehicle_Manger manager;
         
 
         public RegisterForm()
@@ -34,10 +35,10 @@ namespace project1
             FName = txtFirstName.Text;
             LName = txtLastName.Text;
             EmailAddress = txtEmailAddress.Text;
-            
+            manager = new Vehicle_Manager();
 
 
-            Opts Opts = new Opts( new Car(1, "somewhere", new List<HeatedSeat>(), new List<Camera>()));
+            Opts Opts = new Opts(manager);
             Opts.Show();
             this.Hide();
         }

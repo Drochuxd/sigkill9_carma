@@ -7,13 +7,15 @@ using project1;
 
 namespace project1
 {
-	public class Vehicle_Manger
+	public class Vehicle_Manager
 	{
 		public List<Car> vehicle_list;
+		public bool alert_on;
 
-		public Vehicle_Manger()
+		public Vehicle_Manager()
 		{
 			this.vehicle_list = new List<Car>();
+			this.alert_on = false;
 		}
 
 		public void add_car(Car vehicle)
@@ -30,5 +32,7 @@ namespace project1
 		{
 			this.vehicle_list[index].Router_Menu(false, pwd);
 		}
+
+		
 	}
 }

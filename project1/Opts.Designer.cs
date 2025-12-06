@@ -36,7 +36,15 @@
             chkRamp = new CheckBox();
             chkDoorLight = new CheckBox();
             chkVoiceAssistance = new CheckBox();
+            menuStrip1 = new MenuStrip();
+            lightsToolStripMenuItem = new ToolStripMenuItem();
+            doorToolStripMenuItem = new ToolStripMenuItem();
+            interiorToolStripMenuItem = new ToolStripMenuItem();
+            tempratureToolStripMenuItem = new ToolStripMenuItem();
+            aCTempratureToolStripMenuItem = new ToolStripMenuItem();
+            heatedSeatsToolStripMenuItem = new ToolStripMenuItem();
             groupBox1.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -49,10 +57,11 @@
             groupBox1.Controls.Add(chkRamp);
             groupBox1.Controls.Add(chkDoorLight);
             groupBox1.Controls.Add(chkVoiceAssistance);
+            groupBox1.Controls.Add(menuStrip1);
             groupBox1.ForeColor = SystemColors.ControlLightLight;
-            groupBox1.Location = new Point(12, 12);
+            groupBox1.Location = new Point(12, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(478, 509);
+            groupBox1.Size = new Size(478, 517);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "Services";
@@ -85,7 +94,7 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(40, 206);
+            checkBox1.Location = new Point(40, 281);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(139, 24);
             checkBox1.TabIndex = 5;
@@ -96,7 +105,7 @@
             // chkYourLocation
             // 
             chkYourLocation.AutoSize = true;
-            chkYourLocation.Location = new Point(40, 158);
+            chkYourLocation.Location = new Point(40, 231);
             chkYourLocation.Name = "chkYourLocation";
             chkYourLocation.Size = new Size(147, 24);
             chkYourLocation.TabIndex = 4;
@@ -107,7 +116,7 @@
             // chkRamp
             // 
             chkRamp.AutoSize = true;
-            chkRamp.Location = new Point(40, 119);
+            chkRamp.Location = new Point(40, 175);
             chkRamp.Name = "chkRamp";
             chkRamp.Size = new Size(70, 24);
             chkRamp.TabIndex = 3;
@@ -118,7 +127,7 @@
             // chkDoorLight
             // 
             chkDoorLight.AutoSize = true;
-            chkDoorLight.Location = new Point(41, 77);
+            chkDoorLight.Location = new Point(40, 125);
             chkDoorLight.Name = "chkDoorLight";
             chkDoorLight.Size = new Size(102, 24);
             chkDoorLight.TabIndex = 2;
@@ -130,7 +139,7 @@
             // 
             chkVoiceAssistance.AutoSize = true;
             chkVoiceAssistance.ForeColor = SystemColors.ButtonHighlight;
-            chkVoiceAssistance.Location = new Point(41, 36);
+            chkVoiceAssistance.Location = new Point(40, 76);
             chkVoiceAssistance.Name = "chkVoiceAssistance";
             chkVoiceAssistance.Size = new Size(139, 24);
             chkVoiceAssistance.TabIndex = 1;
@@ -138,16 +147,70 @@
             chkVoiceAssistance.UseVisualStyleBackColor = true;
             chkVoiceAssistance.CheckedChanged += chkVoiceAssistance_CheckedChanged;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { lightsToolStripMenuItem, tempratureToolStripMenuItem });
+            menuStrip1.Location = new Point(3, 23);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(472, 28);
+            menuStrip1.TabIndex = 9;
+            menuStrip1.Text = "menuStrip1";
+            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
+            // 
+            // lightsToolStripMenuItem
+            // 
+            lightsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { doorToolStripMenuItem, interiorToolStripMenuItem });
+            lightsToolStripMenuItem.Name = "lightsToolStripMenuItem";
+            lightsToolStripMenuItem.Size = new Size(59, 24);
+            lightsToolStripMenuItem.Text = "lights";
+            lightsToolStripMenuItem.Click += lightsToolStripMenuItem_Click;
+            // 
+            // doorToolStripMenuItem
+            // 
+            doorToolStripMenuItem.Name = "doorToolStripMenuItem";
+            doorToolStripMenuItem.Size = new Size(224, 26);
+            doorToolStripMenuItem.Text = "Door";
+            // 
+            // interiorToolStripMenuItem
+            // 
+            interiorToolStripMenuItem.Name = "interiorToolStripMenuItem";
+            interiorToolStripMenuItem.Size = new Size(224, 26);
+            interiorToolStripMenuItem.Text = "Interior";
+            // 
+            // tempratureToolStripMenuItem
+            // 
+            tempratureToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aCTempratureToolStripMenuItem, heatedSeatsToolStripMenuItem });
+            tempratureToolStripMenuItem.Name = "tempratureToolStripMenuItem";
+            tempratureToolStripMenuItem.Size = new Size(97, 24);
+            tempratureToolStripMenuItem.Text = "temprature";
+            // 
+            // aCTempratureToolStripMenuItem
+            // 
+            aCTempratureToolStripMenuItem.Name = "aCTempratureToolStripMenuItem";
+            aCTempratureToolStripMenuItem.Size = new Size(224, 26);
+            aCTempratureToolStripMenuItem.Text = "AC Temprature";
+            // 
+            // heatedSeatsToolStripMenuItem
+            // 
+            heatedSeatsToolStripMenuItem.Name = "heatedSeatsToolStripMenuItem";
+            heatedSeatsToolStripMenuItem.Size = new Size(224, 26);
+            heatedSeatsToolStripMenuItem.Text = "heated seats";
+            heatedSeatsToolStripMenuItem.Click += heatedSeatsToolStripMenuItem_Click;
+            // 
             // Opts
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(502, 533);
             Controls.Add(groupBox1);
+            MainMenuStrip = menuStrip1;
             Name = "Opts";
             Text = "Opts";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -161,5 +224,12 @@
         private CheckBox chkVoiceAssistance;
         private Button button1;
         private Button btnUser;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem lightsToolStripMenuItem;
+        private ToolStripMenuItem doorToolStripMenuItem;
+        private ToolStripMenuItem interiorToolStripMenuItem;
+        private ToolStripMenuItem tempratureToolStripMenuItem;
+        private ToolStripMenuItem aCTempratureToolStripMenuItem;
+        private ToolStripMenuItem heatedSeatsToolStripMenuItem;
     }
 }

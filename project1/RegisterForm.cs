@@ -37,7 +37,7 @@ namespace project1
             
 
 
-            Opts Opts = new Opts();
+            Opts Opts = new Opts( new Car(1, "somewhere", new List<HeatedSeat>(), new List<Camera>()));
             Opts.Show();
             this.Hide();
         }

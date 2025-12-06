@@ -7,22 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+
 
 namespace project1
 {
     public partial class Opts : Form
     {
+        public Vehicle_Manger manager = new Vehicle_Manger();
         
         public static bool VoiceAssist = false;
+        public static bool heatedSeats = false;
         public static bool DoorLight = false;
         public static bool Ramp = false;
         public static bool YourLocation = false;
         public static bool checkBox = false;
 
-        public Opts()
+        public Opts(Car car)
         {
+
             InitializeComponent();
+            currentCar = car;
         }
 
         private void chkVoiceAssistance_CheckedChanged(object sender, EventArgs e)
@@ -91,6 +95,7 @@ namespace project1
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             VoiceAssist = chkVoiceAssistance.Checked;
             DoorLight = chkDoorLight.Checked;
             Ramp = chkRamp.Checked;
@@ -104,6 +109,7 @@ namespace project1
 
         private void btnUser_Click(object sender, EventArgs e)
         {
+
             VoiceAssist = chkVoiceAssistance.Checked;
             DoorLight = chkDoorLight.Checked;
             Ramp = chkRamp.Checked;
@@ -119,5 +125,136 @@ namespace project1
         {
             chkVoiceAssistance.CheckedChanged += chkVoiceAssistance_CheckedChanged;
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void lightsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void heatedSeatsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (currentCar == null || currentCar.HeatedSeats == null || currentCar.HeatedSeats.Count == 0)
+            {
+                MessageBox.Show("This car has no heated seats.");
+                return;
+            }
+
+            // Clear any old seat items
+            heatedSeatsToolStripMenuItem.DropDownItems.Clear();
+
+            // One menu item per seat
+            for (int i = 0; i < currentCar.HeatedSeats.Count; i++)
+            {
+                int seatIndex = i; // capture for lambda
+
+                ToolStripMenuItem seatItem = new ToolStripMenuItem($"Seat {seatIndex + 1}");
+
+                seatItem.Click += (s, args) =>
+                {
+                    HeatedSeat seat = currentCar.HeatedSeats[seatIndex];
+                    ShowHeatedSeatDialog(seat, seatIndex + 1);
+                };
+
+                heatedSeatsToolStripMenuItem.DropDownItems.Add(seatItem);
+            }
+        }
+        private void ShowHeatedSeatDialog(HeatedSeat seat, int seatNumber)
+        {
+            using (Form dialog = new Form())
+            {
+                dialog.Text = $"Seat {seatNumber} Settings";
+                dialog.StartPosition = FormStartPosition.CenterParent;
+                dialog.FormBorderStyle = FormBorderStyle.FixedDialog;
+                dialog.MinimizeBox = false;
+                dialog.MaximizeBox = false;
+                dialog.ClientSize = new Size(260, 150);
+
+                // Label for temperature
+                Label lblTemp = new Label()
+                {
+                    Left = 10,
+                    Top = 20,
+                    Text = "Temp (70–90):",
+                    AutoSize = true
+                };
+
+                // TextBox for temperature
+                TextBox txtTemp = new TextBox()
+                {
+                    Left = 120,
+                    Top = 18,
+                    Width = 100,
+                    Text = seat.Seat_Temperature.ToString()
+                };
+
+                // Checkbox for On / Off
+                CheckBox chkOn = new CheckBox()
+                {
+                    Left = 10,
+                    Top = 55,
+                    Text = "Seat On",
+                    Checked = seat.Seat_On,
+                    AutoSize = true
+                };
+
+                // OK and Cancel buttons
+                Button btnOk = new Button()
+                {
+                    Text = "OK",
+                    DialogResult = DialogResult.OK,
+                    Left = 50,
+                    Width = 75,
+                    Top = 95
+                };
+
+                Button btnCancel = new Button()
+                {
+                    Text = "Cancel",
+                    DialogResult = DialogResult.Cancel,
+                    Left = 140,
+                    Width = 75,
+                    Top = 95
+                };
+
+                dialog.Controls.Add(lblTemp);
+                dialog.Controls.Add(txtTemp);
+                dialog.Controls.Add(chkOn);
+                dialog.Controls.Add(btnOk);
+                dialog.Controls.Add(btnCancel);
+
+                dialog.AcceptButton = btnOk;
+                dialog.CancelButton = btnCancel;
+
+                if (dialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    // Try to parse the temperature
+                    if (int.TryParse(txtTemp.Text, out int newTemp))
+                    {
+                        // Your HeatedSeat already checks range (70–90)
+                        seat.set_seat_temperature(newTemp);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid temperature. Keeping previous value.");
+                    }
+
+                    // Update On / Off
+                    if (chkOn.Checked != seat.Seat_On)
+                    {
+                        seat.seat_toggle();
+                    }
+
+                    MessageBox.Show(
+                        $"Seat {seatNumber}: {(seat.Seat_On ? "ON" : "OFF")} at {seat.Seat_Temperature}°"
+                    );
+                }
+            }
+        }
     }
-}
+    }
+

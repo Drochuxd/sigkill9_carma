@@ -48,7 +48,7 @@ namespace project1
 
         private void btnService_Click(object sender, EventArgs e)
         {
-            Opts Opts = new Opts();
+            Opts Opts = new Opts(new Vehicle_Manager());
             Opts.Show();
             this.Hide();
         }

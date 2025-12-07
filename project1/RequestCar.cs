@@ -31,7 +31,7 @@ namespace project1
         private void RequestCar_Load(object sender, EventArgs e)
         {
 
-            btnUser.Text = RegisterForm.FName;
+            btnUser.Text = UserData.fname;
         }
 
         private void Request_Click(object sender, EventArgs e)

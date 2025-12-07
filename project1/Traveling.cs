@@ -14,7 +14,7 @@ namespace project1
     public partial class Traveling : Form
     {
         public Vehicle_Manager manager;
-        public static Car currentCar;
+        public Car currentCar;
 
         public Traveling(Vehicle_Manager mgr)
         {

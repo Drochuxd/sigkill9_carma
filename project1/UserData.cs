@@ -13,6 +13,11 @@ namespace project1
 {
     public partial class UserData : Form
     {
+        public static string fname = "";
+        public static string lname = "";
+        public static string emailaddress = "";
+        public Vehicle_Manger manager;
+
         public UserData()
         {
             InitializeComponent();
@@ -20,9 +25,9 @@ namespace project1
 
         private void UserData_Load(object sender, EventArgs e)
         {
-            fName.Text = RegisterForm.FName;
-            lName.Text = RegisterForm.LName;
-            emailAddress.Text = RegisterForm.EmailAddress;
+            fName.Text = fname;
+            lName.Text = lname;
+            emailAddress.Text = emailaddress;
 
         }
         private void btnReturn_Click(object sender, EventArgs e)
@@ -42,7 +47,7 @@ namespace project1
 
         private void btnService_Click(object sender, EventArgs e)
         {
-            Opts Opts = new Opts(new Car(1, "somewhere", new List<HeatedSeat>(), new List<Camera>()));
+            Opts Opts = new Opts();
             Opts.Show();
             this.Hide();
         }

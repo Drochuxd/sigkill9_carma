@@ -14,10 +14,7 @@ namespace project1
     public partial class RegisterForm : Form
     {
 
-        public static string FName = "";
-        public static string LName = "";
-        public static string EmailAddress = "";
-        public Vehicle_Manger manager;
+        
         
 
         public RegisterForm()
@@ -27,15 +24,15 @@ namespace project1
 
         private void RegisterForm_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnRegister_Click_1(object sender, EventArgs e)
         {
-            FName = txtFirstName.Text;
-            LName = txtLastName.Text;
-            EmailAddress = txtEmailAddress.Text;
-            manager = new Vehicle_Manager();
+            UserData.fname = txtFirstName.Text;
+            UserData.lname = txtLastName.Text;
+            UserData.emailaddress = txtEmailAddress.Text;
+            
 
 
             Opts Opts = new Opts(manager);

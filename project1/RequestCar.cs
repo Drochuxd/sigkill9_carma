@@ -36,10 +36,43 @@ namespace project1
             btnUser.Text = UserData.fname;
         }
 
+
         private void Request_Click(object sender, EventArgs e)
         {   
             Location = enterLocation.Text;
             Destanation = enterDestanation.Text;
+
+            using (Form dialog = new Form())
+            {
+                dialog.Text = "Choose a Number";
+                dialog.ClientSize = new Size(200, 120);
+
+                NumericUpDown num = new NumericUpDown()
+                {
+                    Left = 20,
+                    Top = 20,
+                    Minimum = 0,
+                    Maximum = 100,
+                    Value = 10
+                };
+
+                Button okBtn = new Button()
+                {
+                    Text = "OK",
+                    Left = 20,
+                    Top = 60,
+                    DialogResult = DialogResult.OK
+                };
+
+                dialog.Controls.Add(num);
+                dialog.Controls.Add(okBtn);
+                dialog.AcceptButton = okBtn;
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show($"You selected: {num.Value}");
+                }
+            }
 
             Waiting Waiting = new Waiting(manager);
             Waiting.Show();

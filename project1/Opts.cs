@@ -20,14 +20,15 @@ namespace project1
         public static bool YourLocation = false;
         public static bool checkBox = false;
         public static Car currentCar;
+        public static Car otherCar;
 
         public Opts(Vehicle_Manager mgr)
         {
             InitializeComponent();
             manager = mgr;
             // dummy code:
-            manager.add_car(new Car(1, "somewhere", new List<HeatedSeat>([new HeatedSeat()]), new List<Camera>()));
             currentCar = manager.vehicle_list[0];
+            otherCar = manager.vehicle_list[1];
         }
 
         private void chkVoiceAssistance_CheckedChanged(object sender, EventArgs e)

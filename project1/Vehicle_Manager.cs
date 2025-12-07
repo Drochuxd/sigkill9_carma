@@ -16,7 +16,9 @@ namespace project1
 		public Vehicle_Manager()
 		{
 			this.vehicle_list = new List<Car>();
-			this.alert_on = false;
+			this.vehicle_list.Add(new Car(1, "somewhere", new List<HeatedSeat>([new HeatedSeat(), new HeatedSeat()]), new List<Camera>([new Camera(1)])));
+            this.vehicle_list.Add(new Car(2, "nowhere", new List<HeatedSeat>([new HeatedSeat(), new HeatedSeat(), new HeatedSeat()]), new List<Camera>()));
+            this.alert_on = false;
 		}
 
 		public void add_car(Car vehicle)

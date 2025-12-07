@@ -13,10 +13,12 @@ namespace project1
     public partial class Waiting : Form
     {
         public Vehicle_Manager manager;
+        public int person_count;
 
-        public Waiting(Vehicle_Manager manager)
+        public Waiting(Vehicle_Manager manager, int person_count)
         {
             this.manager = manager;
+            this.person_count = person_count;
             InitializeComponent();
             locationLabel.Text = RequestCar.Location;
             destinationLabel.Text = RequestCar.Destanation;

@@ -41,26 +41,34 @@ namespace project1
         {   
             Location = enterLocation.Text;
             Destanation = enterDestanation.Text;
+            int person_count = 1;
 
             using (Form dialog = new Form())
             {
-                dialog.Text = "Choose a Number";
+                dialog.Text = "Request:";
                 dialog.ClientSize = new Size(200, 120);
+
+                TextBox tb = new TextBox()
+                {
+                    Left = 20,
+                    Top = 20,
+                    Text = "How many people?"
+                };
 
                 NumericUpDown num = new NumericUpDown()
                 {
                     Left = 20,
-                    Top = 20,
-                    Minimum = 0,
-                    Maximum = 100,
-                    Value = 10
+                    Top = 60,
+                    Minimum = 1,
+                    Maximum = 7,
+                    Value = 1
                 };
 
                 Button okBtn = new Button()
                 {
                     Text = "OK",
                     Left = 20,
-                    Top = 60,
+                    Top = 100,
                     DialogResult = DialogResult.OK
                 };
 
@@ -70,11 +78,12 @@ namespace project1
 
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show($"You selected: {num.Value}");
+                    person_count = (int)num.Value;
+                    MessageBox.Show($"Ride Request for {num.Value} people submitted!");
                 }
             }
 
-            Waiting Waiting = new Waiting(manager);
+            Waiting Waiting = new Waiting(manager, person_count);
             Waiting.Show();
             this.Hide();
         }

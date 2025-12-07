@@ -48,31 +48,35 @@ namespace project1
                 dialog.Text = "Request:";
                 dialog.ClientSize = new Size(200, 120);
 
-                TextBox tb = new TextBox()
+                Label lbl = new Label()
                 {
                     Left = 20,
-                    Top = 20,
-                    Text = "How many people?"
+                    Top = 15,
+                    Text = "How many Passengers",
+                    AutoSize = true
                 };
 
                 NumericUpDown num = new NumericUpDown()
                 {
                     Left = 20,
-                    Top = 60,
-                    Minimum = 1,
-                    Maximum = 7,
-                    Value = 1
+                    Top = 40,
+                    Minimum = 0,
+                    Maximum = 100,
+                    Value = 10
                 };
 
                 Button okBtn = new Button()
                 {
                     Text = "OK",
                     Left = 20,
-                    Top = 100,
+                    Top = 70,
                     DialogResult = DialogResult.OK
                 };
 
+                dialog.Controls.Add(lbl);
                 dialog.Controls.Add(num);
+                dialog.Controls.Add(okBtn);
+                dialog.AcceptButton = okBtn;
                 dialog.Controls.Add(okBtn);
                 dialog.AcceptButton = okBtn;
 

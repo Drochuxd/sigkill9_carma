@@ -49,7 +49,7 @@ namespace project1
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {   
+        {
             selectedSeat.set_seat_temperature((int)numericUpDown1.Value);
         }
 
@@ -61,7 +61,18 @@ namespace project1
             if (selectedSeat.Seat_On)
                 on = "on";
 
-            MessageBox.Show($"seat{comboBox1.SelectedIndex +1} is {on}");
+            MessageBox.Show($"seat{comboBox1.SelectedIndex + 1} is now {on}");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            String on = "Off";
+            currentCar.lights_toggle();
+
+            if (currentCar.Lights_On)
+                on = "on";
+
+            MessageBox.Show($"lights are now {on}");
         }
     }
 }

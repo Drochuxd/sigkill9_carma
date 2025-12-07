@@ -34,8 +34,10 @@ namespace project1
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
-        }
+			OpenPage OpenPage = new OpenPage();
+			OpenPage.Show();
+			this.Hide();
+		}
 
         private void btnClick_Click(object sender, EventArgs e)
         {

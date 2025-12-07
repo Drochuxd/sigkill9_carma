@@ -15,6 +15,7 @@ namespace project1
         public Vehicle_Manager manager;
         public Car currentCar;
 		public int numSeats;
+        public HeatedSeat selectedSeat;
 
 		public Traveling(Vehicle_Manager mgr)
         {
@@ -22,6 +23,12 @@ namespace project1
             manager = mgr;
             currentCar = manager.vehicle_list[0];
 			numSeats = currentCar.HeatedSeats.Count;
+			for (int i = 0; i < this.numSeats; i++)
+			{
+				comboBox1.Items.Add("Seat " + (i + 1));
+			}
+			comboBox1.SelectedIndex = 0;
+            selectedSeat = currentCar.HeatedSeats[comboBox1.SelectedIndex];
 		}
 
         private void Traveling_Load(object sender, EventArgs e)
@@ -31,12 +38,7 @@ namespace project1
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBox1.Items.Clear();
-            for (int i = 0; i < this.numSeats; i++)
-            {
-                comboBox1.Items.Add("Seat " + (i + 1));
-            }
-            comboBox1.SelectedIndex = 0;
+
         }
     }
 }

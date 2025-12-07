@@ -39,7 +39,8 @@ namespace project1
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            selectedSeat = currentCar.HeatedSeats[comboBox1.SelectedIndex];
+            numericUpDown1.Value = selectedSeat.Seat_Temperature;
         }
 
         private void label1_Click(object sender, EventArgs e)

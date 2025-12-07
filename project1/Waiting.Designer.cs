@@ -36,6 +36,7 @@
             label2 = new Label();
             btnReturn = new Button();
             panel1 = new Panel();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -71,7 +72,7 @@
             distanceLabel.AutoSize = true;
             distanceLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             distanceLabel.ForeColor = SystemColors.ButtonHighlight;
-            distanceLabel.Location = new Point(190, 199);
+            distanceLabel.Location = new Point(193, 298);
             distanceLabel.Name = "distanceLabel";
             distanceLabel.Size = new Size(70, 28);
             distanceLabel.TabIndex = 3;
@@ -135,12 +136,27 @@
             panel1.Size = new Size(509, 95);
             panel1.TabIndex = 8;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.Black;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 9F);
+            button1.ForeColor = Color.Black;
+            button1.Location = new Point(-1, 468);
+            button1.Name = "button1";
+            button1.Size = new Size(208, 53);
+            button1.TabIndex = 9;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_2;
+            // 
             // Waiting
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(502, 533);
+            Controls.Add(button1);
             Controls.Add(panel1);
             Controls.Add(distanceLabel);
             Controls.Add(btnReturn);
@@ -165,5 +181,6 @@
         private Label label2;
         private Button btnReturn;
         private Panel panel1;
+        private Button button1;
     }
 }

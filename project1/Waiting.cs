@@ -18,6 +18,8 @@ namespace project1
             locationLabel.Text = RequestCar.Location;
             destinationLabel.Text = RequestCar.Destanation;
             distanceLabel.Text = 2 + " miles";
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.FlatAppearance.BorderSize = 0;
         }
 
         private void Waiting_Load(object sender, EventArgs e)
@@ -49,8 +51,21 @@ namespace project1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Traveling Traveling = new Traveling(); 
-            Traveling.Show(); 
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            
+            Traveling Traveling = new Traveling(new Vehicle_Manager());
+            Traveling.Show();
+            this.Hide();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            Traveling Traveling = new Traveling(new Vehicle_Manager());
+            Traveling.Show();
             this.Hide();
         }
     }

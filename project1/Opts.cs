@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+// remove me
 
 namespace project1
 {
@@ -253,6 +253,11 @@ namespace project1
                 }
             }
         }
+
+        private void Opts_Load(object sender, EventArgs e)
+        {
+
+        }
     }
-    }
+}
 

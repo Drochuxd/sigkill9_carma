@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// remove me
 
 namespace project1
 {
@@ -44,6 +45,11 @@ namespace project1
             OpenPage OpenPage = new OpenPage();
             OpenPage.Show();
             this.Hide();
+
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -64,6 +64,7 @@
             Controls.Add(login);
             Name = "OpenPage";
             Text = "s";
+            Load += OpenPage_Load;
             ResumeLayout(false);
         }
 

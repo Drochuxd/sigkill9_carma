@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// remove me
 
 namespace project1
 {
@@ -30,6 +31,11 @@ namespace project1
             RegisterForm RegisterForm = new RegisterForm();
             RegisterForm.Show();
             this.Hide();
+        }
+
+        private void OpenPage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

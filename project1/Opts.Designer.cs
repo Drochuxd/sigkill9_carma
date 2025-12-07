@@ -169,13 +169,13 @@
             // doorToolStripMenuItem
             // 
             doorToolStripMenuItem.Name = "doorToolStripMenuItem";
-            doorToolStripMenuItem.Size = new Size(224, 26);
+            doorToolStripMenuItem.Size = new Size(140, 26);
             doorToolStripMenuItem.Text = "Door";
             // 
             // interiorToolStripMenuItem
             // 
             interiorToolStripMenuItem.Name = "interiorToolStripMenuItem";
-            interiorToolStripMenuItem.Size = new Size(224, 26);
+            interiorToolStripMenuItem.Size = new Size(140, 26);
             interiorToolStripMenuItem.Text = "Interior";
             // 
             // tempratureToolStripMenuItem
@@ -188,13 +188,13 @@
             // aCTempratureToolStripMenuItem
             // 
             aCTempratureToolStripMenuItem.Name = "aCTempratureToolStripMenuItem";
-            aCTempratureToolStripMenuItem.Size = new Size(224, 26);
+            aCTempratureToolStripMenuItem.Size = new Size(191, 26);
             aCTempratureToolStripMenuItem.Text = "AC Temprature";
             // 
             // heatedSeatsToolStripMenuItem
             // 
             heatedSeatsToolStripMenuItem.Name = "heatedSeatsToolStripMenuItem";
-            heatedSeatsToolStripMenuItem.Size = new Size(224, 26);
+            heatedSeatsToolStripMenuItem.Size = new Size(191, 26);
             heatedSeatsToolStripMenuItem.Text = "heated seats";
             heatedSeatsToolStripMenuItem.Click += heatedSeatsToolStripMenuItem_Click;
             // 
@@ -207,6 +207,7 @@
             MainMenuStrip = menuStrip1;
             Name = "Opts";
             Text = "Opts";
+            Load += Opts_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             menuStrip1.ResumeLayout(false);

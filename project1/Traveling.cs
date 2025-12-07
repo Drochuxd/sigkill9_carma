@@ -16,10 +16,10 @@ namespace project1
         public Vehicle_Manager manager;
         public static Car currentCar;
 
-        public Traveling(Vehicle_Manager mg)
+        public Traveling(Vehicle_Manager mgr)
         {
             InitializeComponent();
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            manager = mgr;
             currentCar = manager.vehicle_list[0];
         }
 

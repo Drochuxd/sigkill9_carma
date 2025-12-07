@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-// remove me
 
 namespace project1
 {
@@ -27,7 +26,7 @@ namespace project1
             InitializeComponent();
             manager = mgr;
             // dummy code:
-            manager.add_car(new Car(1, "somewhere", new List<HeatedSeat>(), new List<Camera>()));
+            manager.add_car(new Car(1, "somewhere", new List<HeatedSeat>([new HeatedSeat()]), new List<Camera>()));
             currentCar = manager.vehicle_list[0];
         }
 

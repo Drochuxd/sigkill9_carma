@@ -61,7 +61,7 @@ namespace project1
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            
+            if (!manager.vehicle_list[0].Car_Security_System.detect_people(person_count)) ; //fille me in!
             Traveling Traveling = new Traveling(manager);
             Traveling.Show();
             this.Hide();

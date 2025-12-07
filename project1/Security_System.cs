@@ -16,15 +16,10 @@ namespace project1
             this.cameras = cameras;
         }
 
-        public void detect_motion(int camera_id)
+        public bool detect_people(int expected)
         {
-            foreach (Camera cam in this.cameras)
-            {
-                if (cam.Detect_Motion)
-                {
-                    // Logic to handle motion detection to Notification System
-                }
-            }
+            int people_count = 4;
+            return (people_count == expected);
         }
     }
 }

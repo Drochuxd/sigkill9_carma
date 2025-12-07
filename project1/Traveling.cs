@@ -61,7 +61,7 @@ namespace project1
             if (selectedSeat.Seat_On)
                 on = "on";
 
-            MessageBox.Show($"seat{currentCar.HeatedSeats[comboBox1.SelectedIndex]} is {on}");
+            MessageBox.Show($"seat{comboBox1.SelectedIndex +1} is {on}");
         }
     }
 }

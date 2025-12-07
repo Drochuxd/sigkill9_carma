@@ -13,10 +13,6 @@ namespace project1
 
     public partial class RegisterForm : Form
     {
-
-        
-        
-
         public RegisterForm()
         {
             InitializeComponent();

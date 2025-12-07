@@ -16,6 +16,7 @@ namespace project1
         public Car currentCar;
         public int numSeats;
         public HeatedSeat selectedSeat;
+        public int cartemp;
 
         public Traveling(Vehicle_Manager mgr)
         {
@@ -23,6 +24,8 @@ namespace project1
             manager = mgr;
             currentCar = manager.vehicle_list[0];
             numSeats = currentCar.HeatedSeats.Count;
+            cartemp = currentCar.Thermostat;
+
             for (int i = 0; i < this.numSeats; i++)
             {
                 comboBox1.Items.Add("Seat " + (i + 1));
@@ -73,6 +76,22 @@ namespace project1
                 on = "on";
 
             MessageBox.Show($"lights are now {on}");
+        }
+
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+            cartemp = ((int)numericUpDown1.Value);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            String on = "up";
+            currentCar.windows_toggle();
+
+            if (currentCar.Windows_Open)
+                on = "down";
+
+            MessageBox.Show($"Windows are now {on}");
         }
     }
 }

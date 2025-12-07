@@ -38,6 +38,8 @@
             label2 = new Label();
             numericUpDown2 = new NumericUpDown();
             label3 = new Label();
+            label4 = new Label();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             panelHeatedSeats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
@@ -118,7 +120,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(48, 155);
+            label2.Location = new Point(27, 155);
             label2.Name = "label2";
             label2.Size = new Size(48, 20);
             label2.TabIndex = 6;
@@ -131,6 +133,7 @@
             numericUpDown2.Size = new Size(150, 27);
             numericUpDown2.TabIndex = 7;
             numericUpDown2.TextAlign = HorizontalAlignment.Center;
+            numericUpDown2.ValueChanged += numericUpDown2_ValueChanged;
             // 
             // label3
             // 
@@ -141,11 +144,32 @@
             label3.TabIndex = 8;
             label3.Text = "Temperature";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(27, 263);
+            label4.Name = "label4";
+            label4.Size = new Size(74, 20);
+            label4.TabIndex = 9;
+            label4.Text = " Windows";
+            // 
+            // button3
+            // 
+            button3.Location = new Point(177, 263);
+            button3.Name = "button3";
+            button3.Size = new Size(133, 29);
+            button3.TabIndex = 10;
+            button3.Text = "Up/Down";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // Traveling
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(502, 533);
+            Controls.Add(button3);
+            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(numericUpDown2);
             Controls.Add(label2);
@@ -176,5 +200,7 @@
         private Label label2;
         private NumericUpDown numericUpDown2;
         private Label label3;
+        private Label label4;
+        private Button button3;
     }
 }

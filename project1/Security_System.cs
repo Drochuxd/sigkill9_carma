@@ -10,6 +10,7 @@ namespace project1
     public class Security_System
     {
         public List<Camera> cameras;
+        public int people_count;
 
         public Security_System(List<Camera> cameras) 
         {
@@ -18,7 +19,7 @@ namespace project1
 
         public bool detect_people(int expected)
         {
-            int people_count = 4;
+            this.people_count = 4;
             return (people_count == expected);
         }
     }

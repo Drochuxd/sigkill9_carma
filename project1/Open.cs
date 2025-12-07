@@ -15,7 +15,8 @@ namespace project1
         public Open()
         {
             InitializeComponent();
-        }
+            new System.Media.SoundPlayer(@"./Warning.wav").Play();
+		}
 
         private void label1_Click(object sender, EventArgs e)
         {

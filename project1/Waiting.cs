@@ -61,7 +61,7 @@ namespace project1
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (!manager.vehicle_list[0].Car_Security_System.detect_people(person_count)) ; //fille me in!
+            if (manager.vehicle_list[0].Car_Security_System.detect_people(this.person_count)) new System.Media.SoundPlayer(@"./Warning.wav").Play();
             Traveling Traveling = new Traveling(manager);
             Traveling.Show();
             this.Hide();
@@ -69,7 +69,8 @@ namespace project1
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            Traveling Traveling = new Traveling(manager);
+			if (manager.vehicle_list[0].Car_Security_System.detect_people(this.person_count)) new System.Media.SoundPlayer(@"./Warning.wav").Play();
+			Traveling Traveling = new Traveling(manager);
             Traveling.Show();
             this.Hide();
         }

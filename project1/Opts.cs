@@ -262,6 +262,87 @@ namespace project1
         {
 
         }
+
+		private void ShowTermperatureDialog(Car car)
+		{
+			using (Form dialog = new Form())
+			{
+				dialog.Text = $"Thermostat";
+				dialog.StartPosition = FormStartPosition.CenterParent;
+				dialog.FormBorderStyle = FormBorderStyle.FixedDialog;
+				dialog.MinimizeBox = false;
+				dialog.MaximizeBox = false;
+				dialog.ClientSize = new Size(260, 150);
+
+				// Label for temperature
+				Label lblTemp = new Label()
+				{
+					Left = 10,
+					Top = 20,
+					Text = "Temp (70–90):",
+					AutoSize = true
+				};
+
+				// TextBox for temperature
+				TextBox txtTemp = new TextBox()
+				{
+					Left = 120,
+					Top = 18,
+					Width = 100,
+					Text = car.Thermostat.ToString()
+				};
+
+				// OK and Cancel buttons
+				Button btnOk = new Button()
+				{
+					Text = "OK",
+					DialogResult = DialogResult.OK,
+					Left = 50,
+					Width = 75,
+					Top = 95
+				};
+
+				Button btnCancel = new Button()
+				{
+					Text = "Cancel",
+					DialogResult = DialogResult.Cancel,
+					Left = 140,
+					Width = 75,
+					Top = 95
+				};
+
+				dialog.Controls.Add(lblTemp);
+				dialog.Controls.Add(txtTemp);
+				dialog.Controls.Add(btnOk);
+				dialog.Controls.Add(btnCancel);
+
+				dialog.AcceptButton = btnOk;
+				dialog.CancelButton = btnCancel;
+
+				if (dialog.ShowDialog(this) == DialogResult.OK)
+				{
+					// Try to parse the temperature
+					if (int.TryParse(txtTemp.Text, out int newTemp))
+					{
+						// Your HeatedSeat already checks range (70–90)
+						car.set_thermostat(newTemp);
+					}
+					else
+					{
+						MessageBox.Show("Invalid temperature. Keeping previous value.");
+					}
+
+					MessageBox.Show(
+						$"Thermostat now set to {car.Thermostat}°"
+					);
+				}
+			}
+		}
+
+		private void aCTempratureToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowTermperatureDialog(currentCar);
+        }
     }
 }
 

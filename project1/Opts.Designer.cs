@@ -188,13 +188,14 @@
             // aCTempratureToolStripMenuItem
             // 
             aCTempratureToolStripMenuItem.Name = "aCTempratureToolStripMenuItem";
-            aCTempratureToolStripMenuItem.Size = new Size(191, 26);
+            aCTempratureToolStripMenuItem.Size = new Size(224, 26);
             aCTempratureToolStripMenuItem.Text = "AC Temprature";
+            aCTempratureToolStripMenuItem.Click += aCTempratureToolStripMenuItem_Click;
             // 
             // heatedSeatsToolStripMenuItem
             // 
             heatedSeatsToolStripMenuItem.Name = "heatedSeatsToolStripMenuItem";
-            heatedSeatsToolStripMenuItem.Size = new Size(191, 26);
+            heatedSeatsToolStripMenuItem.Size = new Size(224, 26);
             heatedSeatsToolStripMenuItem.Text = "heated seats";
             heatedSeatsToolStripMenuItem.Click += heatedSeatsToolStripMenuItem_Click;
             // 

@@ -55,7 +55,13 @@ namespace project1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            String on = "Off";
             selectedSeat.seat_toggle();
+
+            if (selectedSeat.Seat_On)
+                on = "on";
+
+            MessageBox.Show($"seat{currentCar.HeatedSeats[comboBox1.SelectedIndex]} is {on}");
         }
     }
 }

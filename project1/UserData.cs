@@ -16,7 +16,7 @@ namespace project1
         public static string fname = "";
         public static string lname = "";
         public static string emailaddress = "";
-        public Vehicle_Manger manager;
+        public Vehicle_Manager manager;
 
         public UserData()
         {

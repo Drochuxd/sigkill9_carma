@@ -31,7 +31,7 @@ namespace project1
             
 
 
-            Opts Opts = new Opts(manager);
+            Opts Opts = new Opts(new Vehicle_Manager());
             Opts.Show();
             this.Hide();
         }

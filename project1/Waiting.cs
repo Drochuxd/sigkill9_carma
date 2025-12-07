@@ -12,8 +12,11 @@ namespace project1
 {
     public partial class Waiting : Form
     {
-        public Waiting()
+        public Vehicle_Manager manager;
+
+        public Waiting(Vehicle_Manager manager)
         {
+            this.manager = manager;
             InitializeComponent();
             locationLabel.Text = RequestCar.Location;
             destinationLabel.Text = RequestCar.Destanation;
@@ -44,7 +47,7 @@ namespace project1
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            RequestCar RequestCar = new RequestCar();
+            RequestCar RequestCar = new RequestCar(manager);
             RequestCar.Show();
             this.Hide();
         }
@@ -57,14 +60,14 @@ namespace project1
         private void button1_Click_1(object sender, EventArgs e)
         {
             
-            Traveling Traveling = new Traveling(new Vehicle_Manager());
+            Traveling Traveling = new Traveling(manager);
             Traveling.Show();
             this.Hide();
         }
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            Traveling Traveling = new Traveling(new Vehicle_Manager());
+            Traveling Traveling = new Traveling(manager);
             Traveling.Show();
             this.Hide();
         }

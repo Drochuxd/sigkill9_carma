@@ -8,9 +8,11 @@ namespace project1
     {
         public static string Location = "";
         public static string Destanation = "";
+        public Vehicle_Manager manager;
 
-        public RequestCar()
+        public RequestCar(Vehicle_Manager manager)
         {
+            this.manager = manager;
             if (Opts.YourLocation == true){
                 enterLocation.Text="Your Location";
 
@@ -21,7 +23,7 @@ namespace project1
 
         private void btnUser_Click(object sender, EventArgs e)
         {
-            UserData UserData = new UserData();
+            UserData UserData = new UserData(manager);
             UserData.Show();
             this.Hide();
         }

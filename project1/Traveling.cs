@@ -29,6 +29,7 @@ namespace project1
             }
             comboBox1.SelectedIndex = 0;
             selectedSeat = currentCar.HeatedSeats[comboBox1.SelectedIndex];
+            numericUpDown1.Value = selectedSeat.Seat_Temperature;
         }
 
         private void Traveling_Load(object sender, EventArgs e)

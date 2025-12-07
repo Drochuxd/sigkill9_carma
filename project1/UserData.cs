@@ -18,8 +18,9 @@ namespace project1
         public static string emailaddress = "";
         public Vehicle_Manager manager;
 
-        public UserData()
+        public UserData(Vehicle_Manager manager)
         {
+            this.manager = manager;
             InitializeComponent();
         }
 
@@ -33,7 +34,7 @@ namespace project1
         private void btnReturn_Click(object sender, EventArgs e)
         {
 
-            RequestCar RequestCar = new RequestCar();
+            RequestCar RequestCar = new RequestCar(this.manager);
             RequestCar.Show();
             this.Hide();
         }
@@ -47,7 +48,7 @@ namespace project1
 
         private void btnService_Click(object sender, EventArgs e)
         {
-            Opts Opts = new Opts(new Vehicle_Manager());
+            Opts Opts = new Opts(manager);
             Opts.Show();
             this.Hide();
         }

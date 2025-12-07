@@ -41,7 +41,7 @@ namespace project1
             Location = enterLocation.Text;
             Destanation = enterDestanation.Text;
 
-            Waiting Waiting = new Waiting();
+            Waiting Waiting = new Waiting(manager);
             Waiting.Show();
             this.Hide();
         }

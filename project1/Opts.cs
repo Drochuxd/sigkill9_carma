@@ -104,7 +104,7 @@ namespace project1
             YourLocation = chkYourLocation.Checked;
             checkBox = checkBox1.Checked;
 
-            RequestCar RequestCar = new RequestCar();
+            RequestCar RequestCar = new RequestCar(manager);
             RequestCar.Show();
             this.Hide();
         }
@@ -118,7 +118,7 @@ namespace project1
             YourLocation = chkYourLocation.Checked;
             checkBox = checkBox1.Checked;
 
-            UserData UserData = new UserData();
+            UserData UserData = new UserData(manager);
             UserData.Show();
             this.Hide();
         }

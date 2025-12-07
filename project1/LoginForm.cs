@@ -25,7 +25,7 @@ namespace project1
             {
                 MessageBox.Show("Login Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
-                RequestCar mainForm = new RequestCar();
+                RequestCar mainForm = new RequestCar(new Vehicle_Manager());
                 mainForm.Show();
                 this.Hide();
 

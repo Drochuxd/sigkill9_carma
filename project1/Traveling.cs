@@ -48,8 +48,7 @@ namespace project1
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {   
-
-            selectedSeat.set_seat_temperature();
+            selectedSeat.set_seat_temperature((int)numericUpDown1.Value);
         }
 
         private void button1_Click(object sender, EventArgs e)

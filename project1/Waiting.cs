@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -72,7 +73,10 @@ namespace project1
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-			System.Media.SoundPlayer sp = new System.Media.SoundPlayer(@"./Warning.wav");
+            System.Media.SoundPlayer spt = new System.Media.SoundPlayer(@"./ride.wav");
+            spt.Play();
+            Thread.Sleep(1000);
+            System.Media.SoundPlayer sp = new System.Media.SoundPlayer(@"./Warning.wav");
 			if (manager.vehicle_list[0].Car_Security_System.detect_people(this.person_count)) sp.Play();
 			sp.PlaySync();
             MessageBox.Show("ok for if they wanted to continue seting personcount to detected people if not it locks the door and notifies the authoritys", "Audio Response", MessageBoxButtons.OK, MessageBoxIcon.Information);

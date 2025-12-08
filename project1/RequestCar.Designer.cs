@@ -37,6 +37,8 @@
             pictureBox1 = new PictureBox();
             label3 = new Label();
             btnUser = new Button();
+            label4 = new Label();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -73,7 +75,7 @@
             enterLocation.Name = "enterLocation";
             enterLocation.Size = new Size(239, 27);
             enterLocation.TabIndex = 5;
-            enterLocation.Text = "i";
+            enterLocation.Text = "Enter Your Location";
             enterLocation.TextChanged += enterLocation_TextChanged;
             // 
             // label1
@@ -128,12 +130,34 @@
             btnUser.UseVisualStyleBackColor = false;
             btnUser.Click += btnUser_Click;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(64, 408);
+            label4.Name = "label4";
+            label4.Size = new Size(70, 20);
+            label4.TabIndex = 11;
+            label4.Text = "Password";
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = SystemColors.InactiveCaptionText;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.ForeColor = SystemColors.Window;
+            textBox1.Location = new Point(157, 408);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(239, 20);
+            textBox1.TabIndex = 12;
+            textBox1.Text = "Enter Password";
+            // 
             // RequestCar
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Desktop;
             ClientSize = new Size(502, 533);
+            Controls.Add(textBox1);
+            Controls.Add(label4);
             Controls.Add(btnUser);
             Controls.Add(label3);
             Controls.Add(pictureBox1);
@@ -160,5 +184,7 @@
         private PictureBox pictureBox1;
         private Label label3;
         private Button btnUser;
+        private Label label4;
+        private TextBox textBox1;
     }
 }

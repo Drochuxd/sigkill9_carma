@@ -18,7 +18,6 @@ namespace project1
         public static bool DoorLight = false;
         public static bool Ramp = false;
         public static bool YourLocation = false;
-        public static bool checkBox = false;
         public static Car currentCar;
         public static Car otherCar;
 
@@ -83,17 +82,7 @@ namespace project1
             }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked)
-            {
-                MessageBox.Show("You have opted for Extra Time service.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                checkBox1.Checked = false;
-            }
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -102,7 +91,7 @@ namespace project1
             DoorLight = chkDoorLight.Checked;
             Ramp = chkRamp.Checked;
             YourLocation = chkYourLocation.Checked;
-            checkBox = checkBox1.Checked;
+            
 
             RequestCar RequestCar = new RequestCar(manager);
             RequestCar.Show();
@@ -116,7 +105,7 @@ namespace project1
             DoorLight = chkDoorLight.Checked;
             Ramp = chkRamp.Checked;
             YourLocation = chkYourLocation.Checked;
-            checkBox = checkBox1.Checked;
+            
 
             UserData UserData = new UserData(manager);
             UserData.Show();

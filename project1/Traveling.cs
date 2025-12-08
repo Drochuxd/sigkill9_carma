@@ -34,6 +34,8 @@ namespace project1
             selectedSeat = currentCar.HeatedSeats[comboBox1.SelectedIndex];
             numericUpDown1.Value = selectedSeat.Seat_Temperature;
             numericUpDown2.Value = cartemp;
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.FlatAppearance.BorderSize = 0;
         }
 
         private void Traveling_Load(object sender, EventArgs e)
@@ -86,8 +88,7 @@ namespace project1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            System.Media.SoundPlayer sp = new System.Media.SoundPlayer(@"./lights.wav");
-            sp.Play();
+            
             String on = "up";
             currentCar.windows_toggle();
 
@@ -100,6 +101,76 @@ namespace project1
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+       
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            System.Media.SoundPlayer sp = new System.Media.SoundPlayer(@"./arrive.wav");
+            sp.Play();
+            Arrived Arrived = new Arrived(manager);
+            Arrived.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            String on = "Off";
+            selectedSeat.seat_toggle();
+
+            if (selectedSeat.Seat_On)
+            {
+                on = "on";
+                System.Media.SoundPlayer sp = new System.Media.SoundPlayer(@"./hseaton.wav");
+                sp.Play();
+            }
+            else
+            {
+                System.Media.SoundPlayer spt = new System.Media.SoundPlayer(@"./hseatoff.wav");
+                spt.Play();
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            String on = "Off";
+            currentCar.lights_toggle();
+
+            if (currentCar.Lights_On)
+            {
+                on = "on";
+                System.Media.SoundPlayer sp = new System.Media.SoundPlayer(@"./lighton.wav");
+                sp.Play();
+            }
+            else
+            {
+                System.Media.SoundPlayer spt = new System.Media.SoundPlayer(@"./lightoff.wav");
+                spt.Play();
+            }
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            
+            String on = "up";
+            currentCar.windows_toggle();
+
+            if (currentCar.Windows_Open)
+            {
+                on = "down";
+                System.Media.SoundPlayer sp = new System.Media.SoundPlayer(@"./windowup.wav");
+                sp.Play();
+            }
+            else
+            {
+                System.Media.SoundPlayer spt = new System.Media.SoundPlayer(@"./windowdown.wav");
+                spt.Play();
+            }
         }
     }
 }

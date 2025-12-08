@@ -12,9 +12,16 @@ namespace project1
 {
     public partial class Arrived : Form
     {
-        public Arrived()
+        public Vehicle_Manager manager;
+        public Arrived(Vehicle_Manager mgr)
         {
+            this.manager = mgr;
             InitializeComponent();
+        }
+
+        private void Arrived_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

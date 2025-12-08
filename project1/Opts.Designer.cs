@@ -36,9 +36,6 @@
             chkDoorLight = new CheckBox();
             chkVoiceAssistance = new CheckBox();
             menuStrip1 = new MenuStrip();
-            lightsToolStripMenuItem = new ToolStripMenuItem();
-            doorToolStripMenuItem = new ToolStripMenuItem();
-            interiorToolStripMenuItem = new ToolStripMenuItem();
             tempratureToolStripMenuItem = new ToolStripMenuItem();
             aCTempratureToolStripMenuItem = new ToolStripMenuItem();
             heatedSeatsToolStripMenuItem = new ToolStripMenuItem();
@@ -143,34 +140,13 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { lightsToolStripMenuItem, tempratureToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { tempratureToolStripMenuItem });
             menuStrip1.Location = new Point(3, 23);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(472, 31);
             menuStrip1.TabIndex = 9;
             menuStrip1.Text = "menuStrip1";
             menuStrip1.ItemClicked += menuStrip1_ItemClicked;
-            // 
-            // lightsToolStripMenuItem
-            // 
-            lightsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { doorToolStripMenuItem, interiorToolStripMenuItem });
-            lightsToolStripMenuItem.Font = new Font("Segoe UI", 10F);
-            lightsToolStripMenuItem.Name = "lightsToolStripMenuItem";
-            lightsToolStripMenuItem.Size = new Size(69, 27);
-            lightsToolStripMenuItem.Text = "Lights";
-            lightsToolStripMenuItem.Click += lightsToolStripMenuItem_Click;
-            // 
-            // doorToolStripMenuItem
-            // 
-            doorToolStripMenuItem.Name = "doorToolStripMenuItem";
-            doorToolStripMenuItem.Size = new Size(140, 26);
-            doorToolStripMenuItem.Text = "Door";
-            // 
-            // interiorToolStripMenuItem
-            // 
-            interiorToolStripMenuItem.Name = "interiorToolStripMenuItem";
-            interiorToolStripMenuItem.Size = new Size(140, 26);
-            interiorToolStripMenuItem.Text = "Interior";
             // 
             // tempratureToolStripMenuItem
             // 
@@ -183,14 +159,14 @@
             // aCTempratureToolStripMenuItem
             // 
             aCTempratureToolStripMenuItem.Name = "aCTempratureToolStripMenuItem";
-            aCTempratureToolStripMenuItem.Size = new Size(191, 26);
+            aCTempratureToolStripMenuItem.Size = new Size(224, 28);
             aCTempratureToolStripMenuItem.Text = "AC Temprature";
             aCTempratureToolStripMenuItem.Click += aCTempratureToolStripMenuItem_Click;
             // 
             // heatedSeatsToolStripMenuItem
             // 
             heatedSeatsToolStripMenuItem.Name = "heatedSeatsToolStripMenuItem";
-            heatedSeatsToolStripMenuItem.Size = new Size(191, 26);
+            heatedSeatsToolStripMenuItem.Size = new Size(224, 28);
             heatedSeatsToolStripMenuItem.Text = "heated seats";
             heatedSeatsToolStripMenuItem.Click += heatedSeatsToolStripMenuItem_Click;
             // 
@@ -221,9 +197,6 @@
         private Button button1;
         private Button btnUser;
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem lightsToolStripMenuItem;
-        private ToolStripMenuItem doorToolStripMenuItem;
-        private ToolStripMenuItem interiorToolStripMenuItem;
         private ToolStripMenuItem tempratureToolStripMenuItem;
         private ToolStripMenuItem aCTempratureToolStripMenuItem;
         private ToolStripMenuItem heatedSeatsToolStripMenuItem;

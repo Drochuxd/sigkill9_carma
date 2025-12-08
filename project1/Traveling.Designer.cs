@@ -41,6 +41,11 @@
             label4 = new Label();
             button3 = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            button4 = new Button();
+            button5 = new Button();
+            button6 = new Button();
+            button7 = new Button();
+            button8 = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             panelHeatedSeats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
@@ -191,12 +196,67 @@
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
+            // button4
+            // 
+            button4.Location = new Point(427, 119);
+            button4.Name = "button4";
+            button4.Size = new Size(47, 29);
+            button4.TabIndex = 11;
+            button4.Text = "btn";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(427, 218);
+            button5.Name = "button5";
+            button5.Size = new Size(47, 29);
+            button5.TabIndex = 12;
+            button5.Text = "btn";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(427, 305);
+            button6.Name = "button6";
+            button6.Size = new Size(47, 29);
+            button6.TabIndex = 13;
+            button6.Text = "btn";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(427, 398);
+            button7.Name = "button7";
+            button7.Size = new Size(47, 29);
+            button7.TabIndex = 14;
+            button7.Text = "btn";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
+            // button8
+            // 
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.Location = new Point(27, 463);
+            button8.Name = "button8";
+            button8.Size = new Size(463, 47);
+            button8.TabIndex = 15;
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
+            // 
             // Traveling
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(502, 533);
+            Controls.Add(button8);
+            Controls.Add(button7);
+            Controls.Add(button6);
+            Controls.Add(button5);
+            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -232,5 +292,10 @@
         private Label label4;
         private Button button3;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Button button4;
+        private Button button5;
+        private Button button6;
+        private Button button7;
+        private Button button8;
     }
 }

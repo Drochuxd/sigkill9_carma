@@ -84,7 +84,7 @@
             button1.Name = "button1";
             button1.Size = new Size(150, 48);
             button1.TabIndex = 6;
-            button1.Text = "continue";
+            button1.Text = "Continue";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -159,14 +159,14 @@
             // aCTempratureToolStripMenuItem
             // 
             aCTempratureToolStripMenuItem.Name = "aCTempratureToolStripMenuItem";
-            aCTempratureToolStripMenuItem.Size = new Size(224, 28);
+            aCTempratureToolStripMenuItem.Size = new Size(208, 28);
             aCTempratureToolStripMenuItem.Text = "AC Temprature";
             aCTempratureToolStripMenuItem.Click += aCTempratureToolStripMenuItem_Click;
             // 
             // heatedSeatsToolStripMenuItem
             // 
             heatedSeatsToolStripMenuItem.Name = "heatedSeatsToolStripMenuItem";
-            heatedSeatsToolStripMenuItem.Size = new Size(224, 28);
+            heatedSeatsToolStripMenuItem.Size = new Size(208, 28);
             heatedSeatsToolStripMenuItem.Text = "heated seats";
             heatedSeatsToolStripMenuItem.Click += heatedSeatsToolStripMenuItem_Click;
             // 

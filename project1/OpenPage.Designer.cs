@@ -35,9 +35,10 @@
             // login
             // 
             login.BackColor = Color.DarkGray;
-            login.Location = new Point(208, 185);
+            login.Font = new Font("Segoe UI", 16.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            login.Location = new Point(121, 158);
             login.Name = "login";
-            login.Size = new Size(94, 29);
+            login.Size = new Size(207, 104);
             login.TabIndex = 0;
             login.Text = "LOGIN";
             login.UseVisualStyleBackColor = false;
@@ -46,9 +47,10 @@
             // register
             // 
             register.BackColor = Color.DarkGray;
-            register.Location = new Point(208, 301);
+            register.Font = new Font("Segoe UI", 16.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            register.Location = new Point(121, 326);
             register.Name = "register";
-            register.Size = new Size(94, 29);
+            register.Size = new Size(207, 109);
             register.TabIndex = 1;
             register.Text = "REGISTER";
             register.UseVisualStyleBackColor = false;

@@ -86,6 +86,8 @@ namespace project1
 
         private void button3_Click(object sender, EventArgs e)
         {
+            System.Media.SoundPlayer sp = new System.Media.SoundPlayer(@"./lights.wav");
+            sp.Play();
             String on = "up";
             currentCar.windows_toggle();
 
@@ -93,6 +95,11 @@ namespace project1
                 on = "down";
 
             MessageBox.Show($"Windows are now {on}");
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

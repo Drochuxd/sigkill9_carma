@@ -62,6 +62,7 @@ namespace project1
         private void button1_Click_1(object sender, EventArgs e)
         {
             System.Media.SoundPlayer sp = new System.Media.SoundPlayer(@"./Warning.wav");
+            
             if (manager.vehicle_list[0].Car_Security_System.detect_people(this.person_count)) sp.Play();
             sp.PlaySync();
             Traveling Traveling = new Traveling(manager);
@@ -75,6 +76,7 @@ namespace project1
 			if (manager.vehicle_list[0].Car_Security_System.detect_people(this.person_count)) sp.Play();
 			sp.PlaySync();
             MessageBox.Show("ok for if they wanted to continue seting personcount to detected people if not it locks the door and notifies the authoritys", "Audio Response", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.person_count = manager.vehicle_list[0].Car_Security_System.people_count;
             Traveling Traveling = new Traveling(manager);
             Traveling.Show();
             this.Hide();

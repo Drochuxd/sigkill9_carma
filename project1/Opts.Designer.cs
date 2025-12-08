@@ -31,7 +31,6 @@
             groupBox1 = new GroupBox();
             btnUser = new Button();
             button1 = new Button();
-            checkBox1 = new CheckBox();
             chkYourLocation = new CheckBox();
             chkRamp = new CheckBox();
             chkDoorLight = new CheckBox();
@@ -52,7 +51,6 @@
             groupBox1.BackColor = Color.Black;
             groupBox1.Controls.Add(btnUser);
             groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(checkBox1);
             groupBox1.Controls.Add(chkYourLocation);
             groupBox1.Controls.Add(chkRamp);
             groupBox1.Controls.Add(chkDoorLight);
@@ -70,10 +68,11 @@
             // btnUser
             // 
             btnUser.BackColor = SystemColors.ActiveCaptionText;
+            btnUser.Font = new Font("Segoe UI", 10F);
             btnUser.ForeColor = SystemColors.ButtonHighlight;
-            btnUser.Location = new Point(160, 445);
+            btnUser.Location = new Point(142, 438);
             btnUser.Name = "btnUser";
-            btnUser.Size = new Size(143, 41);
+            btnUser.Size = new Size(147, 48);
             btnUser.TabIndex = 8;
             btnUser.Text = "User Data";
             btnUser.UseVisualStyleBackColor = false;
@@ -82,43 +81,35 @@
             // button1
             // 
             button1.BackColor = SystemColors.ActiveCaptionText;
+            button1.Font = new Font("Segoe UI", 10F);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(322, 445);
+            button1.Location = new Point(315, 438);
             button1.Name = "button1";
-            button1.Size = new Size(143, 41);
+            button1.Size = new Size(150, 48);
             button1.TabIndex = 6;
             button1.Text = "continue";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(40, 281);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(139, 24);
-            checkBox1.TabIndex = 5;
-            checkBox1.Text = "Voice Assistance";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
-            // 
             // chkYourLocation
             // 
             chkYourLocation.AutoSize = true;
-            chkYourLocation.Location = new Point(40, 231);
+            chkYourLocation.Font = new Font("Segoe UI", 11F);
+            chkYourLocation.Location = new Point(40, 339);
             chkYourLocation.Name = "chkYourLocation";
-            chkYourLocation.Size = new Size(147, 24);
+            chkYourLocation.Size = new Size(185, 29);
             chkYourLocation.TabIndex = 4;
-            chkYourLocation.Text = "use Your Location";
+            chkYourLocation.Text = "Use Your Location";
             chkYourLocation.UseVisualStyleBackColor = true;
             chkYourLocation.CheckedChanged += chkYourLocation_CheckedChanged;
             // 
             // chkRamp
             // 
             chkRamp.AutoSize = true;
-            chkRamp.Location = new Point(40, 175);
+            chkRamp.Font = new Font("Segoe UI", 11F);
+            chkRamp.Location = new Point(40, 263);
             chkRamp.Name = "chkRamp";
-            chkRamp.Size = new Size(70, 24);
+            chkRamp.Size = new Size(82, 29);
             chkRamp.TabIndex = 3;
             chkRamp.Text = "Ramp";
             chkRamp.UseVisualStyleBackColor = true;
@@ -127,9 +118,10 @@
             // chkDoorLight
             // 
             chkDoorLight.AutoSize = true;
-            chkDoorLight.Location = new Point(40, 125);
+            chkDoorLight.Font = new Font("Segoe UI", 11F);
+            chkDoorLight.Location = new Point(40, 192);
             chkDoorLight.Name = "chkDoorLight";
-            chkDoorLight.Size = new Size(102, 24);
+            chkDoorLight.Size = new Size(123, 29);
             chkDoorLight.TabIndex = 2;
             chkDoorLight.Text = "Door Light";
             chkDoorLight.UseVisualStyleBackColor = true;
@@ -138,10 +130,11 @@
             // chkVoiceAssistance
             // 
             chkVoiceAssistance.AutoSize = true;
+            chkVoiceAssistance.Font = new Font("Segoe UI", 11F);
             chkVoiceAssistance.ForeColor = SystemColors.ButtonHighlight;
-            chkVoiceAssistance.Location = new Point(40, 76);
+            chkVoiceAssistance.Location = new Point(40, 127);
             chkVoiceAssistance.Name = "chkVoiceAssistance";
-            chkVoiceAssistance.Size = new Size(139, 24);
+            chkVoiceAssistance.Size = new Size(172, 29);
             chkVoiceAssistance.TabIndex = 1;
             chkVoiceAssistance.Text = "Voice Assistance";
             chkVoiceAssistance.UseVisualStyleBackColor = true;
@@ -153,7 +146,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { lightsToolStripMenuItem, tempratureToolStripMenuItem });
             menuStrip1.Location = new Point(3, 23);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(472, 28);
+            menuStrip1.Size = new Size(472, 31);
             menuStrip1.TabIndex = 9;
             menuStrip1.Text = "menuStrip1";
             menuStrip1.ItemClicked += menuStrip1_ItemClicked;
@@ -161,9 +154,10 @@
             // lightsToolStripMenuItem
             // 
             lightsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { doorToolStripMenuItem, interiorToolStripMenuItem });
+            lightsToolStripMenuItem.Font = new Font("Segoe UI", 10F);
             lightsToolStripMenuItem.Name = "lightsToolStripMenuItem";
-            lightsToolStripMenuItem.Size = new Size(59, 24);
-            lightsToolStripMenuItem.Text = "lights";
+            lightsToolStripMenuItem.Size = new Size(69, 27);
+            lightsToolStripMenuItem.Text = "Lights";
             lightsToolStripMenuItem.Click += lightsToolStripMenuItem_Click;
             // 
             // doorToolStripMenuItem
@@ -181,21 +175,22 @@
             // tempratureToolStripMenuItem
             // 
             tempratureToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aCTempratureToolStripMenuItem, heatedSeatsToolStripMenuItem });
+            tempratureToolStripMenuItem.Font = new Font("Segoe UI", 10F);
             tempratureToolStripMenuItem.Name = "tempratureToolStripMenuItem";
-            tempratureToolStripMenuItem.Size = new Size(97, 24);
-            tempratureToolStripMenuItem.Text = "temprature";
+            tempratureToolStripMenuItem.Size = new Size(111, 27);
+            tempratureToolStripMenuItem.Text = "Temprature";
             // 
             // aCTempratureToolStripMenuItem
             // 
             aCTempratureToolStripMenuItem.Name = "aCTempratureToolStripMenuItem";
-            aCTempratureToolStripMenuItem.Size = new Size(224, 26);
+            aCTempratureToolStripMenuItem.Size = new Size(191, 26);
             aCTempratureToolStripMenuItem.Text = "AC Temprature";
             aCTempratureToolStripMenuItem.Click += aCTempratureToolStripMenuItem_Click;
             // 
             // heatedSeatsToolStripMenuItem
             // 
             heatedSeatsToolStripMenuItem.Name = "heatedSeatsToolStripMenuItem";
-            heatedSeatsToolStripMenuItem.Size = new Size(224, 26);
+            heatedSeatsToolStripMenuItem.Size = new Size(191, 26);
             heatedSeatsToolStripMenuItem.Text = "heated seats";
             heatedSeatsToolStripMenuItem.Click += heatedSeatsToolStripMenuItem_Click;
             // 
@@ -219,7 +214,6 @@
         #endregion
 
         private GroupBox groupBox1;
-        private CheckBox checkBox1;
         private CheckBox chkYourLocation;
         private CheckBox chkRamp;
         private CheckBox chkDoorLight;
